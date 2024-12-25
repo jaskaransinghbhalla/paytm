@@ -6,9 +6,11 @@ app.get("/", (req, res) => {
   res.send("Bank Webhook");
 });
 
+app.use(express.json());
+
 app.post("/hdfcWebhook", async (req, res) => {
   // TODO: Zod Validation to be added
-  //TODO: HDFC bank should ideally send us a secret so we know this is sent by them
+  // TODO: HDFC bank should ideally send us a secret so we know this is sent by them
   const paymentInformation: {
     token: string;
     userId: string;
@@ -18,6 +20,7 @@ app.post("/hdfcWebhook", async (req, res) => {
     userId: req.body.uid,
     amount: req.body.amount,
   };
+
   try {
     await db.$transaction([
       db.balance.updateMany({
