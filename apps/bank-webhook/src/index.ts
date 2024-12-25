@@ -2,6 +2,10 @@ import express from "express";
 import db from "@repo/db/client";
 const app = express();
 
+app.get("/", (req, res) => {
+  res.send("Bank Webhook");
+});
+
 app.post("/hdfcWebhook", async (req, res) => {
   // TODO: Zod Validation to be added
   //TODO: HDFC bank should ideally send us a secret so we know this is sent by them

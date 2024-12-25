@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Providers } from "../provider";
-
+import { AppbarClient } from "../components/AppbarClient";
 export const metadata: Metadata = {
   title: "User App",
 };
@@ -14,7 +14,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Providers>
-        <body>{children}</body>
+        <body>
+          <div className="min-w-screen min-h-screen bg-[#ebe6e6]">
+            <AppbarClient />
+            {children}
+          </div>
+        </body>
       </Providers>
     </html>
   );
