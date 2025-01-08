@@ -1,10 +1,10 @@
 "use client";
 import { Button } from "@repo/ui/button";
 import { Card } from "@repo/ui/card";
-import { Select } from "@repo/ui/select";
-import { useState } from "react";
-import { TextInput } from "@repo/ui/textinput";
 import { createOnRampTransaction } from "../lib/actions/createOnrampTransaction";
+import { Select } from "@repo/ui/select";
+import { TextInput } from "@repo/ui/textinput";
+import { useState } from "react";
 
 const SUPPORTED_BANKS = [
   {

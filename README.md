@@ -10,8 +10,13 @@
 - Users can add money to their wallet from their bank account
 - Users can send money back to their bank account from the wallet
 - Users can transfer the money from one wallet to another wallet (p2p transfers)
+- Users can see their transaction history on the app.
 
 ## Concepts
+
+### Session Management
+
+- This project implements user session management using Next auth
 
 ### On Ramping
 
@@ -19,6 +24,7 @@
 - Paytm then redirects the user to bank's page using this token.
 - If user made a successful payment, bank hits the webhook url provided by the company.
 - Paytm becomes aware about the transaction and updates the balances accordingly.
+- Balances are locked when someone is performing a transaction on them.
 
 ## Tech Stack
 
@@ -26,7 +32,11 @@
 - Next.js
 - Node.js
 - Express.js
+- Next Auth
 - Prisma
+- Postgres
+- Docker
+- Docker Compose
 
 ## Architecture
 

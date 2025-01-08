@@ -7,8 +7,6 @@ export async function createOnRampTransaction(
   provider: string,
   amount: number
 ) {
-  // Ideally the token should come from the banking provider (hdfc/axis)) {}
-
   const session = await getServerSession(authOptions);
 
   if (!session?.user || !session.user?.id) {
@@ -16,7 +14,8 @@ export async function createOnRampTransaction(
       message: "Unauthenticated request",
     };
   }
-
+  // We are randomly generating a token.
+  // Ideally the token should come from the banking provider (hdfc/axis)) {}
   const token = (Math.random() * 1000).toString();
 
   await prisma.onRampTransaction.create({
